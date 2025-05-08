@@ -1,0 +1,434 @@
+/* 基本重置和全局样式 */
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* 给所有图片一点圆角 */
+}
+
+/* 头部和导航 */
+header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d35400; /* 类似米兰时尚感的橙色系 */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* 允许导航换行 */
+}
+
+nav ul li {
+    margin-left: 15px; /* 减小间距 */
+    margin-bottom: 5px; /* 增加换行时的底部间距 */
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: 500;
+    padding: 5px 8px; /* 给导航链接一些内边距 */
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: white;
+    background-color: #d35400;
+    text-decoration: none;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* 与导航项的间距 */
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9rem;
+}
+.search-container button {
+    padding: 0.5rem 1rem;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.search-container button:hover {
+    background-color: #e67e22;
+}
+
+
+/* 主内容区域 */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 英雄区域 */
+.hero-section {
+    /* 修改这里的 background-image 路径 */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem; /* 调整字体大小 */
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem; /* 调整字体大小 */
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: #d35400;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+    text-decoration: none;
+}
+
+/* 快速链接/卡片 和 页面版块通用样式 */
+.quick-links, .page-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.quick-links h2, .page-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.page-section > p { /* 版块主 P 标签的样式 */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+
+/* 卡片容器 (首页快速链接) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(33.333% - 2rem); /* 3 cards per row, accounting for gap */
+    display: flex;
+    flex-direction: column;
+    min-width: 280px; /* 最小宽度 */
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* 固定高度 */
+    object-fit: cover; /* 保证图片不变形 */
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin: 1rem;
+    color: #d35400;
+}
+
+.card p {
+    margin: 0 1rem 1rem;
+    flex-grow: 1;
+    color: #555;
+}
+
+.card-link {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.card-link:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+
+/* 景点卡片容器和卡片 */
+.attraction-container {
+    display: grid; /* 改用 grid 布局 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 响应式列 */
+    gap: 1.5rem;
+}
+
+.attraction-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.attraction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.attraction-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.attraction-card h3 {
+    font-size: 1.3rem;
+    margin: 1rem;
+    color: #d35400;
+}
+.attraction-card p {
+    margin: 0 1rem 1rem;
+    flex-grow: 1;
+    color: #555;
+}
+/* 景点卡片的链接按钮也使用 .card-link 样式 */
+
+
+/* 内容网格布局 (用于交通、美食等版块) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.content-item {
+    background: #fdfdfd;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+}
+.content-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.content-item h3 {
+    font-size: 1.2rem;
+    color: #d35400;
+    margin-bottom: 0.5rem;
+}
+.content-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+/* 天气信息 */
+.weather-info {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.weather-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* 实用攻略布局 */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.tip-item {
+    background: #fdfdfd;
+    padding: 1.2rem;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+}
+.tip-item h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+.tip-icon {
+    width: 24px !important; /* 强制大小 */
+    height: 24px !important; /* 强制大小 */
+    margin-right: 0.5rem;
+    border-radius: 0; /* 图标不需要圆角 */
+}
+
+.tip-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+/* 占位符版块 (如果还需要) */
+.placeholder {
+    text-align: center;
+    color: #777;
+    padding: 3rem;
+    border: 2px dashed #ddd;
+}
+
+
+/* 页脚 */
+footer {
+    background-color: #333;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #d35400;
+}
+
+footer a:hover {
+    color: #f9b48a;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    nav ul {
+        justify-content: center; /* 在中等屏幕导航项居中 */
+    }
+    .card { /* 首页快速链接卡片 */
+        flex-basis: calc(50% - 1rem); /* 2 cards per row */
+    }
+     .search-container {
+        margin-top: 10px;
+        width: auto; /* 允许搜索框缩小 */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* logo 居中 */
+    }
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0; /* 移除与logo的间距 */
+    }
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 0.8rem; /* 增大点击区域 */
+    }
+    .search-container {
+        width: 90%; /* 搜索框宽度 */
+        margin: 1rem auto 0; /* 搜索框居中并与导航项有间距 */
+    }
+    .search-container input {
+        flex-grow: 1;
+    }
+
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .card { /* 首页快速链接卡片 */
+        flex-basis: 100%; /* 1 card per row */
+    }
+    /* 其他网格布局在小屏幕上会自动变为单列，因为 minmax 设置 */
+}
